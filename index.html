@@ -41,6 +41,9 @@
             padding: 20px;
             text-align: center;
         }
+         #spinner{
+          display:none;
+        }
           
     </style>
 </head>
@@ -93,7 +96,7 @@
             <p>enter movie name like Intersteller</p>
           <br>
           <br>
-          <button onclick="show()"  class="btn btn-primary">Search</button>
+          <button onclick="show();disp()"  class="btn btn-primary">Search</button>
           <br>
           <br>
           <a href="/Impact/index.html"><button class="btn btn-primary">Refresh</button></a>
@@ -110,6 +113,13 @@
 
         <script>
 
+                 function disp(){
+            document.getElementById("spinner").style.display = "block";
+          }
+
+          function hide(){
+            document.getElementById("spinner").style.display = "none";
+          }
 
 
             // function Onclick(){
@@ -190,6 +200,7 @@
                         <p class="card-text">${element.titleType}</p>
                     </div>
                     </div><br>`
+                    hide();
 
                 })
             }
